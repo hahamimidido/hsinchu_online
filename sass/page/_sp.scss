@@ -37,11 +37,10 @@
             flex: 1 1 50%;
             display: flex;
             @include screen('mobile') {
-              flex-flow:row wrap;
-              input[type="text"]{
-                flex:1 1 100%;
-              }
-
+                flex-flow: row wrap;
+                input[type="text"] {
+                    flex: 1 1 100%;
+                }
             }
             button {
                 min-width: 6em;
@@ -49,8 +48,8 @@
                 padding-right: .5em;
                 margin-left: 1em;
                 @include screen('mobile') {
-                  margin-left: auto;
-                  margin-right: 0;
+                    margin-left: auto;
+                    margin-right: 0;
                 }
             }
         }
@@ -72,9 +71,14 @@
     margin-top: 1em;
     text-align: center;
     @include screen('mobile') {
-      margin-top: 0;
+        margin-top: 0;
     }
-
+}
+.no-gutter {
+    @include screen('mobile') {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 .ipcam {
     max-width: 400px;
@@ -90,12 +94,12 @@
     @include screen('mobile') {
         margin: 0 auto;
     }
-    .screen{
-      position:absolute;
-      width: 100%;
-      left: 0;
-      top: 0;
-      height: 100%;
+    .screen {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
     }
     .screen_btn_grp {
         position: absolute;
@@ -103,35 +107,56 @@
         right: .5em;
         .btn {
             background: rgba(0, 0, 0, .35);
-            border:none;
-            color:#FFF;
-            padding:.35em .6em;
-            min-width:1em;
-            transition:.3s ease-out;
-            i{
-              filter:invert(100%);
+            border: none;
+            color: #FFF;
+            padding: .35em .6em;
+            min-width: 1em;
+            transition: .3s ease-out;
+            i {
+                filter: invert(100%);
             }
-            &:hover,&:focus {
-              background: rgba(0, 0, 0, .85);
-              border:none !important;
-              border:none !important;
-              box-shadow:none !important;
+            &:hover, &:focus {
+                background: rgba(0, 0, 0, .85);
+                border: none !important;
+                border: none !important;
+                box-shadow: none !important;
             }
         }
     }
-}
-.control_panel {
-    padding: 1em;
-    max-width:400px;
-    text-align: left;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    @include screen('mobile') {
-        background: #FFF;
-    }
-    .btn_grp {
+    .control_panel {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1em  .75em;
+        max-width: 400px;
         text-align: left;
-        flex: 1 1 25%;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+        background: rgba(0, 0, 0, .35);
+        @include screen('mobile') {
+            padding: 1em .25em;
+        }
+        .btn_grp {
+            text-align: left;
+            flex: 0 1 20%;
+            display: flex;
+            justify-content: center;
+            &.play {
+                flex: 0 1 20%;
+                .btn {
+                    flex: 1 1 100%;
+                }
+            }
+            &.stop {
+                flex: 1 1 20%;
+            }
+            .btn {
+                padding: .2em .4em;
+                min-width: 2em;
+                margin: 0 .2em;
+            }
+        }
     }
 }
