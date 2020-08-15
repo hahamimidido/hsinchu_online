@@ -73,41 +73,41 @@
         <!-- header End -->
         <!-- main Start -->
         <div id="center" class="main innerpage">
-            <div class="inner_img">
+            <!--  <div class="inner_img">
                 <img src="images/feature_bg.jpg" alt="">
-            </div>
+            </div> -->
             <div class="container">
-                <h2 class="title">機台列表</h2>
+                <!-- <h2 class="title">機台列表</h2> -->
                 <div class="content">
                     <div class="play_block">
                         <!-- 攝影機 -->
                         <!-- 提供兩個尺寸：ratio-3-4 或是 ratio-9-16 -->
-                        <div class="ipcam ratio-3-4">
-                            <div class="btn_grp">
+                        <div class="ipcam ratio-9-16">
+                            <!-- ipcam套在screen div -->
+                            <div class="screen"></div>
+                            <div class="btn_grp screen_btn_grp">
                                 <button type="button" class="btn"><i class="i_enlarge"></i></button>
-                                 <button type="button" class="btn">playing</button>
+                                <button type="button" class="btn">playing</button>
                             </div>
-                        </div>
-                        <!-- 控制選單 -->
-                        <div class="control_panel">
-                            <div class="btn_grp">
-                                <!-- 榜哥：指定open class會開燈箱 燈箱在最下面 -->
-                                <button type="button" class="btn btn-orange open">自動</button>
-                                <button type="button" class="btn btn-green">壓分</button>
-                                <button type="button" class="btn btn-green">開始</button>
-                            </div>
-                            <div class="btn_grp">
-                                <button type="button" class="btn ">停1</button>
-                                <button type="button" class="btn ">停2</button>
-                                <button type="button" class="btn ">停3</button>
-                            </div>
-                            <div class="btn_grp">
-                                <button type="button" class="btn btn-orange">得分</button>
-                                <button type="button" class="btn btn-blue">退幣</button>
-                            </div>
-                            <div class="btn_grp">
-                                <button type="button" class="btn btn-red">洗分</button>
-                                <button type="button" class="btn btn-red">移分</button>
+                            <!-- 控制選單 -->
+                            <div class="control_panel">
+                                <div class="btn_grp">
+                                    <!-- 榜哥：指定open class會開燈箱 燈箱在最下面 -->
+                                    <button type="button" class="btn btn-green open">開始</button>
+                                </div>
+                                <div class="btn_grp">
+                                    <button type="button" class="btn ">停1</button>
+                                    <button type="button" class="btn ">停2</button>
+                                    <button type="button" class="btn ">停3</button>
+                                </div>
+                                <!-- <div class="btn_grp">
+                                    <button type="button" class="btn btn-orange">得分</button>
+                                    <button type="button" class="btn btn-blue">退幣</button>
+                                </div> -->
+                                <div class="btn_grp">
+                                    <button type="button" class="btn btn-red">洗分/移分</button>
+                                    <button type="button" class="btn btn-red">自動</button>
+                                </div>
                             </div>
                         </div>
                     </div>

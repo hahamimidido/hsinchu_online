@@ -69,14 +69,18 @@
     }
 }
 .play_block {
-    display: flex;
-    flex-flow: row wrap;
+    margin-top: 1em;
+    text-align: center;
+    @include screen('mobile') {
+      margin-top: 0;
+    }
+
 }
 .ipcam {
     max-width: 400px;
     background: #666;
-    flex: 0 1 400px;
     position: relative;
+    margin: 0 auto;
     &.ratio-9-16 {
         @include aspect-ratio(9, 16);
     }
@@ -86,9 +90,16 @@
     @include screen('mobile') {
         margin: 0 auto;
     }
-    .btn_grp {
+    .screen{
+      position:absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+    .screen_btn_grp {
         position: absolute;
-        bottom: 0;
+        top: 0;
         right: .5em;
         .btn {
             background: rgba(0, 0, 0, .35);
@@ -110,19 +121,17 @@
     }
 }
 .control_panel {
-    flex: 1 1 40%;
     padding: 1em;
+    max-width:400px;
     text-align: left;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
-    background: url(../images/plag_bg.jpg) no-repeat right center;
-    background-size: cover;
     @include screen('mobile') {
         background: #FFF;
     }
     .btn_grp {
         text-align: left;
-        flex: 1 1 100%;
+        flex: 1 1 25%;
     }
 }
