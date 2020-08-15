@@ -136,6 +136,9 @@
             transition: .3s ease-out;
             i {
                 filter: invert(100%);
+                &:before{
+                  margin-top: 0;
+                }
             }
             &:hover, &:focus {
                 background: rgba(0, 0, 0, .85);
