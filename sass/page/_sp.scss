@@ -101,6 +101,73 @@
         top: 0;
         height: 100%;
     }
+    .dropdown {
+        position: absolute;
+        right: .25em;
+        top: 50%;
+        .dropdown-btn {
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, .5);
+            padding: 0;
+            min-width: auto;
+            padding: .75em .5em 0;
+            text-align: center;
+            &:hover, &:focus {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            i {
+                filter: invert(100%);
+                &:before {
+                    margin-top: 0;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .dropdown-content {
+            position: absolute;
+            background: rgba(0, 0, 0, .75);
+            border-radius: $border-radius/2;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, .35);
+            width: 280px;
+            padding: 1em;
+            right: 0;
+            top: 0em;
+            opacity: 0;
+            pointer-events: none;
+            text-align: left;
+            transition: .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+            h3 {
+                color: $primaryColor;
+                font-size: 1.125rem;
+                text-align: left;
+                margin: 0 0 .5em;
+                @include screen('mobile') {
+                    color: #FFF;
+                }
+            }
+            .btn_grp {
+                display: block;
+                position: relative;
+                top: auto;
+                right: auto;
+                .btn {
+                    padding: .4em !important;
+                    font-size: 1rem;
+                    width: 100%;
+                }
+            }
+            &.show {
+                opacity: 1;
+                top: 3em;
+                pointer-events: auto;
+            }
+        }
+    }
     .quit_btn_grp {
         position: absolute;
         top: .25em;
@@ -136,8 +203,8 @@
             transition: .3s ease-out;
             i {
                 filter: invert(100%);
-                &:before{
-                  margin-top: 0;
+                &:before {
+                    margin-top: 0;
                 }
             }
             &:hover, &:focus {
