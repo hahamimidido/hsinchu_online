@@ -36,11 +36,22 @@
         .form_content {
             flex: 1 1 50%;
             display: flex;
+            @include screen('mobile') {
+              flex-flow:row wrap;
+              input[type="text"]{
+                flex:1 1 100%;
+              }
+
+            }
             button {
                 min-width: 6em;
                 padding-left: .5em;
                 padding-right: .5em;
                 margin-left: 1em;
+                @include screen('mobile') {
+                  margin-left: auto;
+                  margin-right: 0;
+                }
             }
         }
     }
