@@ -105,7 +105,7 @@
                                     <button type="button" class="btn btn-blue">退幣</button>
                                 </div> -->
                                 <div class="btn_grp">
-                                    <button type="button" class="btn btn-orange">洗分/移分</button>
+                                    <button type="button" class="btn btn-orange wash">洗分/移分</button>
                                     <button type="button" class="btn btn-blue">自動</button>
                                 </div>
                             </div>
@@ -163,8 +163,8 @@
         <!-- fatfooter End -->
     </div>
     <a href="javascript:;" class="scrollToTop">回頁首</a>
-    <!-- 燈箱Start -->
-    <div class="modal-frame">
+    <!-- 開分燈箱Start -->
+    <div class="modal-frame modal_open">
         <div class="modal">
             <div class="modal-inset">
                 <div class="button close"><i class="i_close"></i></div>
@@ -178,6 +178,26 @@
                     </div>
                     <div class="btn_grp">
                         <button class="btn btn-green">開分</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 洗分燈箱Start -->
+    <div class="modal-frame modal_wash">
+        <div class="modal">
+            <div class="modal-inset">
+                <div class="button close"><i class="i_close"></i></div>
+                <div class="modal-body">
+                    <h3>進行洗分</h3>
+                    <div class="currentMoney">目前錢包：<span>6000</span></div>
+                    <div class="bet">
+                        <form>
+                            <input type="text" text="">
+                        </form>
+                    </div>
+                    <div class="btn_grp">
+                        <button class="btn btn-green">洗分</button>
                     </div>
                 </div>
             </div>
@@ -205,22 +225,34 @@
     <!-- 燈箱js -->
     <script>
     $(function() {
-        $modal = $('.modal-frame');
+        $modal_open = $('.modal_open');
+        $modal_wash = $('.modal_wash');
         $overlay = $('.modal-overlay');
         /* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
-        $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-            if ($modal.hasClass('state-leave')) {
-                $modal.removeClass('state-leave');
+        $modal_open.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            if ($modal_open.hasClass('state-leave')) {
+                $modal_open.removeClass('state-leave');
+            }
+        });
+        $modal_wash.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            if ($modal_wash.hasClass('state-leave')) {
+                $modal_wash.removeClass('state-leave');
             }
         });
         $('.modal .close').on('click', function(e) {
             $overlay.removeClass('state-show');
-            $modal.removeClass('state-appear').addClass('state-leave');
+            $modal_open.removeClass('state-appear').addClass('state-leave');
+            $modal_wash.removeClass('state-appear').addClass('state-leave');
             e.preventDefault();
         });
         $('.open').on('click', function(e) {
             $overlay.addClass('state-show');
-            $modal.removeClass('state-leave').addClass('state-appear');
+            $modal_open.removeClass('state-leave').addClass('state-appear');
+            e.preventDefault();
+        });
+        $('.wash').on('click', function(e) {
+            $overlay.addClass('state-show');
+            $modal_wash.removeClass('state-leave').addClass('state-appear');
             e.preventDefault();
         });
     });
