@@ -141,6 +141,7 @@
             pointer-events: none;
             text-align: left;
             transition: .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+            z-index: 9999;
             h3 {
                 color: $primaryColor;
                 font-size: 1.125rem;
